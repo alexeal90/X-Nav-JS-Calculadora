@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+   	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+		<style type="text/css" media="screen">
+       #botones{
+			margin-top: 10px;
+		 }
+		 .boton{
+			padding:.2em;
+			margin-right: 15px;
+			border: outset black;
+			border-radius: 15px 15px 15px 15px;
+		 }
+		 #resultado{
+			width:150px;
+			height:30px;
+			border: inset #696969;
+			line-height: 30px;
+			text-align: 40px;
+			border-radius: 15px 15px 15px 15px;
+		 }
+   	</style>
+   	<title>Imagenes aleatorias</title>
+		<script type="text/javascript" charset="utf-8">
+      	function num(x){
+			 resultado = x;
+          actualiza()
+			}
+
+			function actualiza(){
+			 var result = document.getElementById('resultado');
+			 result.innerHTML = resultado.toString(2);
+			}
+
+			function sum(){
+			 if (resultado != null || firstOp ==null){
+				firstOp = resultado;
+				resultado = null;
+			 };
+			 actualiza();
+			}
+
+			function result(){
+			 if (resultado != null || firstOp != null){
+				resultado += firstOp;
+			 };
+			 actualiza()
+			}
+     </script>
+   </head>
+   <body>
+		<div id='resultado'></div>
+		<div id='botones'> <a class='boton' id="cero" href="javascript:num(0)">0</a> <a	class='boton' id="uno" href="javascript:num(1)">1</a>
+		<a class='boton' id="mas" href="javascript:sum()">+</a> <a class='boton' id="igual" href="javascript:result()">=</a></div>		
+   </body>
+</html>
